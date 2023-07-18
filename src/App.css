@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --mainColor: #fff;
+    --mainLightColor: rgba(235,235,235,0.5);
+    --mainDimColor: rgb(228,228,228);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    max-width: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--mainColor);
+    font-family: 'Poppins';   
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.backgroundVideo{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    z-index: -1;
+    filter: saturate(2.5);
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.music-Container{
+    width: 300px;
+    margin-left: 20%;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 36px;
+    box-shadow: 0 0 20px rgba(26,26,26,0.1),
+    0 0 40px rgba(26,26,26,0.1),
+    0 0 80px rgba(26,26,26,0.1);
+    backdrop-filter: blur(15px);
+    font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.musicPlayer{
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--mainLightColor);
+}
+
+.music-Head-Name{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.music-Artist-Name{
+    color: var(--mainDimColor);
+    margin: 4px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+#songAvatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 18px 0;
+    position: relative;
+    cursor: pointer;
+    animation: animateAvatar 10s linear infinite;
+}
+
+@keyframes animateAvatar {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.musicTimerDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+}
+
+.musicProgressBar{
+    width: 100%;
+    margin-bottom: 16px;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    filter: hue-rotate(20deg);
+}
+
+/* Volume */
+.volumeSlider{
+    width: 30%;
+    height: 5px;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.volumeToggler{
+    width: 10px;
+    margin-right: 100px;
+}
+
+
+.playBtn{
+    font-size: 32px;
+    margin: 8px 10px;
+    color: var(--mainColor);
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.musicControler{
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--mainColor);
+}
+
+
+#songLyrics{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    border-radius: 15px;
+    bottom: 0;
+    transform: translateX(5%);
+    z-index: 10;
+    transition: .4s;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+    text-align: center;
+} 
+
+
+#songLyrics:hover{
+    height: 500px;
+    color: #222;
+}
+
+
+.objectFitCover{
+    object-fit: cover;
+}
+
+.objectFitContain{
+    object-fit: contain;
 }
